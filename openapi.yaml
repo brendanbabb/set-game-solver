@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: Set Game Solver API
+  version: '1.0'
+servers:
+  - url: https://your-site-name.netlify.app/.netlify/functions
+paths:
+  /set-game-solver:
+    get:
+      summary: Solve the Set Game and find all valid sets.
+      parameters:
+        - in: query
+          name: cards
+          schema:
+            type: string
+          required: true
+          description: Cards input string.
+      responses:
+        '200':
+          description: A JSON object containing the sets found.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalSetsFound:
+                    type: integer
+                  sets:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        cards:
+                          type: array
+                          items:
+                            type: integer
+                        attributes:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              attribute:
+                                type: string
+                              type:
+                                type: string
+                              value:
+                                type: string
+                              values:
+                                type: array
+                                items:
+                                  type: string
