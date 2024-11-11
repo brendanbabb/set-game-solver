@@ -3,7 +3,7 @@ info:
   title: Set Game Solver API
   version: '1.0'
 servers:
-  - url: https://your-site-name.netlify.app/.netlify/functions
+  - url: https://moonlit-creponne-71300c.netlify.app/.netlify/functions
 paths:
   /set-game-solver:
     get:
